@@ -11,7 +11,7 @@ async function onSubmit() {
   loading.value = true
   try {
     await login(state.email, state.password)
-    await navigateTo('/')
+    await navigateTo('/dashboard')
   } catch (e) {
     error.value = apiErrorMessage(e, 'Connexion impossible')
   } finally {

@@ -11,7 +11,7 @@ async function onSubmit() {
   loading.value = true
   try {
     await register(state.email, state.password, state.displayName)
-    await navigateTo('/')
+    await navigateTo('/dashboard')
   } catch (e) {
     error.value = apiErrorMessage(e, 'Inscription impossible')
   } finally {

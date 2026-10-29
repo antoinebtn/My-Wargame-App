@@ -5,7 +5,7 @@ const { user, fetchMe, logout } = useAuth()
 await fetchMe().catch(() => {})
 
 const links: NavigationMenuItem[] = [
-  { label: 'Tableau de bord', icon: 'i-lucide-layout-dashboard', to: '/' },
+  { label: 'Tableau de bord', icon: 'i-lucide-layout-dashboard', to: '/dashboard' },
   { label: 'Catalogue', icon: 'i-lucide-palette', to: '/paints' },
   { label: 'Mes peintures', icon: 'i-lucide-paintbrush', to: '/inventory' },
   { label: 'Mes armées', icon: 'i-lucide-swords', to: '/armies' }
@@ -14,7 +14,7 @@ const links: NavigationMenuItem[] = [
 
 <template>
   <div class="min-h-screen">
-    <UHeader title="My Wargame App" to="/">
+    <UHeader title="My Wargame App" to="/dashboard">
       <UNavigationMenu :items="links" />
 
       <template #right>
