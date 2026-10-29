@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: mywargame-db
+    # Values come from .env (see .env.example)
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-mywargame}
+      POSTGRES_USER: ${POSTGRES_USER:-mywargame}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env (see .env.example)}
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
